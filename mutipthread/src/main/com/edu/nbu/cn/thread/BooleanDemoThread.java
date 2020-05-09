@@ -32,7 +32,7 @@ public class BooleanDemoThread extends Thread{
             }
 
             System.out.println(name + " 执行完毕");
-            exists.set(true);
+            exists.set(false);
         }else{
             System.out.println(name + "什么也做不了");
         }
