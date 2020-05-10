@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+//https://www.jianshu.com/p/4de503edc819
 public class LotsOfThreadInParallel {
     //强制数千个线程尝试并行执行某些逻辑
     public static void main(String[] args) throws InterruptedException {
