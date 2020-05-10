@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerDemo {
     //lazySet均非线程安全，如果可以接受一段时间内读到的数据是旧数据且对性能要求极高可以考虑使用，否则不推荐使用;
+    //AtomicLong方法与AtomicInteger类似，不再冗举
 
     public static void main(String[] args) {
         AtomicInteger ai = new AtomicInteger(123);
