@@ -26,6 +26,7 @@ public class LotsOfThreadInParallel {
         //Causes the current thread to wait until the latch has counted down to Zero
         //主线程挂起，直至count down值为0,保证所有线程已准备就绪
         readyThreadCounter.await();
+        //防止线程异常，可采用带超时时间的await方法 readyThreadCounter.await(3000,TimeUnit.MILLISECONDS);
         System.out.println(readyThreadCounter.getCount());;
         outputs.add("workers ready");
         //多个线程同时被唤醒
