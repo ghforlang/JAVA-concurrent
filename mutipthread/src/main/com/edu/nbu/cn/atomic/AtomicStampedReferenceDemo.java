@@ -19,7 +19,7 @@ public class AtomicStampedReferenceDemo {
             int stamp = asr.getStamp();
             System.out.println(Thread.currentThread().getName() + "- 当前值 ：" + value + " 当前版本号 ：" + stamp);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
