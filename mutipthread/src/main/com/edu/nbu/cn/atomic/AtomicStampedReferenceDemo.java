@@ -27,6 +27,7 @@ public class AtomicStampedReferenceDemo {
             if(asr.compareAndSet(value,UPDATE_NUN,stamp,stamp + 1)){
                 System.out.println(Thread.currentThread().getName() + "- 当前值 ：" + asr.getReference() + " 当前版本号 ：" + asr.getStamp());
             }else{
+                System.out.println(Thread.currentThread().getName() + "- 当前值 ：" + asr.getReference() + " 当前版本号 ：" + asr.getStamp());
                 System.out.println("版本号不同，更新失败!");
             }
         },"线程A").start();
@@ -38,10 +39,11 @@ public class AtomicStampedReferenceDemo {
             int value = asr.getReference();
             int stamp = asr.getStamp();
             System.out.println(Thread.currentThread().getName() + " : 当前值为：" + value + " 版本号为：" + stamp);
-            asr.compareAndSet(asr.getReference(), TEM_NUM, stamp, stamp + 1);
-            System.out.println(Thread.currentThread().getName() + " : 当前值为：" + asr.getReference() + " 版本号为：" + asr.getStamp());
-            asr.compareAndSet(asr.getReference(), INIT_NUM, stamp, stamp + 1);
-            System.out.println(Thread.currentThread().getName() + " : 当前值为：" + asr.getReference() + " 版本号为：" + asr.getStamp());
+            boolean result = asr.compareAndSet(asr.getReference(), TEM_NUM, stamp, stamp + 1);
+            System.out.println(Thread.currentThread().getName() + " : 当前值为：" + asr.getReference() + " 版本号为：" + asr.getStamp() + "结果：" + result);
+            result = asr.compareAndSet(asr.getReference(), INIT_NUM, stamp, stamp + 1);
+            //思考:为什么会失败?
+            System.out.println(Thread.currentThread().getName() + " : 当前值为：" + asr.getReference() + " 版本号为：" + asr.getStamp() + "结果：" + result);
         },"线程B").start();
     }
 }

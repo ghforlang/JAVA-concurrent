@@ -1,0 +1,11 @@
+1、多线程
+synchronized：原子性、可见、有序、可重入
+volatile：可见、防止指令重排
+atomic ：原子类，均基于CAS,内部value值要保证可见性，必须用volatile修饰
+Striped64 mapReduce思想
+reentrantLock： AQS实现，分为公平、非公平;重点研究
+CountDownLatch：AQS实现
+
+CAS：UnSafe实现
+UnSafe： 1.8仅支持JVM内部使用
+AQS： 待详解

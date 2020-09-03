@@ -22,6 +22,7 @@ public class WaitingWorker implements Runnable{
     @Override
     public void run() {
         readyThreadCounter.countDown();
+        System.out.println("readyThreadCounter = " + readyThreadCounter.getCount());
         try {
             callingThreadBlocker.await();
             System.out.println(Thread.currentThread().getName() + "开始执行!");
