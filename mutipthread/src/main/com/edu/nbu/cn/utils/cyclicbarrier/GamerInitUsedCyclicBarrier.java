@@ -4,6 +4,9 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 用于多个资源加载，全部加载完毕后再进行下一步操作。
+ */
 public class GamerInitUsedCyclicBarrier {
 
     public static void main(String[] args) {

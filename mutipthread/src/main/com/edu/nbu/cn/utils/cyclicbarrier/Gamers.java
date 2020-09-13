@@ -17,7 +17,7 @@ public class Gamers implements Runnable{
     public void run() {
         try {
             TimeUnit.SECONDS.sleep(1 + (new Random().nextInt(5)));
-            System.out.println(name + " 开始加载 --------------等待其他玩家加载成功!");
+            System.out.println(name + " 开始加载 --------------等待其他玩家加载!," + barrier.getNumberWaiting() + "个玩家准备中!");
             barrier.await();
             System.out.println(name + " 加载成功 --------------全部玩家加载成功，比赛开始!");
         } catch (InterruptedException e) {

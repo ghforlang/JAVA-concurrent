@@ -26,7 +26,7 @@ public class WaitingWorker implements Runnable{
         try {
             callingThreadBlocker.await();
             System.out.println(Thread.currentThread().getName() + "开始执行!");
-            outPut.add("countDown");
+            outPut.add(Thread.currentThread().getName() + " countDown");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
