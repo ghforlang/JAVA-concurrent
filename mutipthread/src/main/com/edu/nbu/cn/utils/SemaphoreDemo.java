@@ -3,6 +3,9 @@ package com.edu.nbu.cn.utils;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.Semaphore;
 
+/**
+ * AQS 子类实现
+ */
 public class SemaphoreDemo {
 
     //Semaphore synchronized 的加强版，计数信号量，必须由获取它的线程释放；常用于限制可访问资源的线程数量，如限流；

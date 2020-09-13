@@ -9,7 +9,7 @@ public class CountDownLatchDemo {
 
 
 
-    //通过计数器实现，计数器初始值是线程数量；每当一个线程执行完毕，计数器-1，=0时表示所有线程都执行完毕，闭锁上等待的线程就可以恢复工作了
+    //AQS子类，通过计数器实现，计数器初始值是线程数量；每当一个线程执行完毕，计数器-1，=0时表示所有线程都执行完毕，闭锁上等待的线程就可以恢复工作了
     private  static CountDownLatch cdl = new CountDownLatch(2);
 
     public static void main(String[] args) {
