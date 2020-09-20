@@ -26,6 +26,8 @@ class LockSupportThread extends Thread{
         //默认无限等待，直至获取许可
         LockSupport.park();
         System.out.println("LockSupportThread is unparking");
+        LockSupport.park();
+        System.out.println("lockSupportThread is parking again!");
     }
 }
 
@@ -39,5 +41,7 @@ class OtherThread extends Thread{
         System.out.println("before unpark");
         LockSupport.unpark((Thread)obj);
         System.out.println("afer unpark");
+        LockSupport.unpark((Thread)obj);
+        System.out.println("LockSupportThread is unparkin again");
     }
 }
