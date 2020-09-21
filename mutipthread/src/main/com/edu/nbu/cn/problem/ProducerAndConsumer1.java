@@ -9,7 +9,7 @@ import java.util.List;
 public class ProducerAndConsumer1 {
     static class MyCollection{
         LinkedList<String> myList = new LinkedList<>();
-        private volatile int  count = 0;
+        private  int  count = 0;
 
 
         public synchronized void put(String i){
