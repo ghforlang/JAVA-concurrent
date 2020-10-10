@@ -3,12 +3,10 @@ package com.edu.nbu.cn.threadlocal;
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.alibaba.ttl.TtlCallable;
 import com.alibaba.ttl.TtlRunnable;
-import javafx.concurrent.Task;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class TransmittableThreadLocalDemo {
 
