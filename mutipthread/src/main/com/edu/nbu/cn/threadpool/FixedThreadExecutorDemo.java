@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * 方便用于分批次计算
+ */
 public class FixedThreadExecutorDemo {
 
     public static void main(String[] args) {
