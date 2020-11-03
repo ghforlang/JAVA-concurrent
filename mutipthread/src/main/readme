@@ -9,3 +9,42 @@ CountDownLatch：AQS实现
 CAS：UnSafe实现
 UnSafe： 1.8仅支持JVM内部使用
 AQS： 待详解
+
+
+JMH常用注解说明：
+@BenchmarkMode(Mode.Throughput)   //基准测试模式(具体参考org.openjdk.jmh.annotations.Mode.java:32)；吞吐量、平均时间、随机样本时间
+Mode.Throughput : 整体吞吐量，例如：1秒内可以执行多少次调用
+Mode.AverageTime: 调用的平均时间，例如每次调用平均耗时 xxxms
+Mode.SampleTime: 随机取样，最后输出取样结果的分布，比如 99%的调用在xxxms以内，99.99%的调用在xxx ms以内。
+Mode.SingleShotTime:  以上模式都是默认一次iteration 是1s，唯有SingleShotTime是只运行一次；往往同时把warmup次数设为0，用于测试冷启动时的性能。
+
+
+Iteration
+JMH进行测试的最小单位，大部分模式下，一次iteration代表的是1s，JMH会在这一秒内不断调用需要benchmark的方法，然后根据模式对其进行采样，计算吞吐量、平均执行时间等。
+@Warmup
+实际执行benchmark前先进行预热的行为；为了让benchmark的结果更接近真实情况。
+
+@OutputTimeUnit(TimeUnit.SECONDS)   //基准测试结果的时间类型
+JMH结果所使用的时间单位
+
+@Threads(4)   //测试线程数量.  or 10
+测试线程数
+
+@State(Scope.Thread)   //该状态为每个线程独享
+类注解，JMH测试类必须使用该注解，类似一个类实例的声明周期；
+Scope.Thread 默认state值，每个测试线程分配一个实例
+Scope.Benchmark 所有测试线程共享一个实例，用于测试有状态实例在多线程共享下的性能
+Scope.Group 每个线程组共享一个实例
+
+@Fork
+
+@Setup
+方法注解 会在benchmark之前被执行，主要用于初始化
+
+@TearDown
+方法注解 会在所有benchmark执行结束以后执行，主要用于资源的回收等
+
+@Param
+成员注解，用来指定某项擦书的多种情况， 比较适合测试一个方法在不同的参数输入情况下的性能
+
+
