@@ -2,6 +2,9 @@ package com.edu.nbu.cn;
 
 import org.openjdk.jmh.annotations.*;
 
+/**
+ * jmh测试类必须写在test包里 Java Microbenchmark Harness
+ */
 @State(Scope.Thread)
 public class JmhTest {
 
