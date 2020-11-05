@@ -6,6 +6,6 @@ public class StringEventHandler implements EventHandler<StringEvent> {
 
     @Override
     public void onEvent(StringEvent stringEvent, long l, boolean b) throws Exception {
-        System.out.println("string event has bean handled " + l);
+        System.out.println( " has bean handled by" + "[" +  Thread.currentThread().getName() + "]" + l);
     }
 }
